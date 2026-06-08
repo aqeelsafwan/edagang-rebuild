@@ -1,0 +1,247 @@
+---
+layout: base.njk
+title: "Daftar Program eDagang — Latihan B2B & eCommerce Malaysia"
+description: "Daftar program latihan B2B dan eCommerce eDagang. Semak kelayakan anda dan tempah tempat anda sekarang. HRDC claimable, MARA approved."
+canonical: "/daftar"
+pageStyles: |
+  .daftar-layout { display:grid; grid-template-columns:1fr 380px; gap:48px; align-items:start; }
+  .checker-card { background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); padding:32px; margin-bottom:24px; }
+  .checker-title { font-size:18px; font-weight:700; margin-bottom:6px; }
+  .checker-sub { font-size:14px; color:var(--gray-600); margin-bottom:24px; line-height:1.6; }
+  .checker-question { margin-bottom:20px; }
+  .checker-q-text { font-size:15px; font-weight:600; margin-bottom:10px; }
+  .radio-group { display:flex; gap:10px; }
+  .radio-option { display:flex; align-items:center; gap:8px; }
+  .radio-option input[type="radio"] { width:18px; height:18px; accent-color:var(--purple); cursor:pointer; }
+  .radio-option label { font-size:14px; font-weight:500; cursor:pointer; }
+  .eligibility-pass { background:var(--green-light); color:#14532d; border:1px solid rgba(22,163,74,0.25); border-radius:var(--radius-sm); padding:14px 16px; font-size:14px; font-weight:600; line-height:1.6; margin-top:16px; }
+  .eligibility-fail { background:#FEF2F2; color:#7F1D1D; border:1px solid rgba(239,68,68,0.2); border-radius:var(--radius-sm); padding:14px 16px; font-size:14px; font-weight:600; line-height:1.6; margin-top:16px; }
+  #eligibility-result { display:none; }
+  #reg-form { display:none; }
+  .form-card { background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); padding:32px; }
+  .form-title { font-size:20px; font-weight:800; letter-spacing:-0.4px; margin-bottom:6px; }
+  .form-sub { font-size:14px; color:var(--gray-600); margin-bottom:28px; line-height:1.6; }
+  .form-group { margin-bottom:20px; }
+  .form-label { display:block; font-size:13px; font-weight:600; color:var(--gray-700); margin-bottom:6px; }
+  .form-label span { color:#DC2626; }
+  .form-input, .form-select, .form-textarea { width:100%; padding:11px 14px; border-radius:var(--radius-sm); border:1.5px solid var(--gray-200); font-size:14px; font-family:'Plus Jakarta Sans',sans-serif; color:var(--gray-900); background:var(--white); outline:none; transition:border-color 0.15s; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--purple); }
+  .form-input::placeholder { color:var(--gray-400); }
+  .form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A09D94' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:36px; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .form-submit { width:100%; padding:14px; background:var(--purple); color:var(--white); border:none; border-radius:var(--radius-sm); font-size:15px; font-weight:700; font-family:'Plus Jakarta Sans',sans-serif; cursor:pointer; transition:all 0.2s; box-shadow:0 4px 16px rgba(74,63,165,0.3); }
+  .form-submit:hover { background:var(--purple-dark); transform:translateY(-1px); }
+  .form-note { font-size:12px; color:var(--gray-400); text-align:center; margin-top:12px; line-height:1.6; }
+  .sidebar-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding:24px; margin-bottom:16px; }
+  .sidebar-card-title { font-size:14px; font-weight:700; margin-bottom:14px; }
+  .sidebar-item { display:flex; gap:10px; margin-bottom:12px; align-items:flex-start; }
+  .sidebar-item:last-child { margin-bottom:0; }
+  .sidebar-dot { width:8px; height:8px; border-radius:50%; background:var(--purple); flex-shrink:0; margin-top:5px; }
+  .sidebar-item-text { font-size:13px; color:var(--gray-600); line-height:1.6; }
+  .sidebar-item-text strong { color:var(--gray-900); }
+  .wa-card { background:var(--purple); border-radius:var(--radius-lg); padding:24px; text-align:center; }
+  .wa-card p { font-size:14px; color:rgba(255,255,255,0.75); margin-bottom:16px; line-height:1.6; }
+  @media(max-width:860px){ .daftar-layout { grid-template-columns:1fr; } .form-row { grid-template-columns:1fr; } }
+---
+
+<div class="page-hero">
+  <div class="container">
+    <span class="label-tag">Pendaftaran</span>
+    <h1 class="page-hero-title">Daftar Program <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--purple)">eDagang</span></h1>
+    <p class="page-hero-sub">Lengkapkan borang di bawah. Kami akan hubungi anda dalam masa 24 jam untuk sahkan tempat dan bantu anda proses HRDC jika berkenaan.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="daftar-layout">
+
+      <!-- MAIN FORM AREA -->
+      <div>
+        <!-- ELIGIBILITY CHECKER -->
+        <div class="checker-card">
+          <div class="checker-title">Semak Kelayakan Anda Dulu</div>
+          <div class="checker-sub">3 soalan mudah, 10 saat. Pastikan anda layak sebelum daftar.</div>
+          <form id="eligibility-form">
+            <div class="checker-question">
+              <div class="checker-q-text">1. Adakah anda warganegara Malaysia?</div>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q1" value="yes"> Ya</label>
+                <label class="radio-option"><input type="radio" name="q1" value="no"> Tidak</label>
+              </div>
+            </div>
+            <div class="checker-question">
+              <div class="checker-q-text">2. Adakah anda pemilik perniagaan, usahawan, atau pekerja syarikat?</div>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q2" value="yes"> Ya</label>
+                <label class="radio-option"><input type="radio" name="q2" value="no"> Tidak / Pelajar sepenuh masa</label>
+              </div>
+            </div>
+            <div class="checker-question" style="margin-bottom:0">
+              <div class="checker-q-text">3. Adakah anda mempunyai smartphone?</div>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q3" value="yes"> Ya</label>
+                <label class="radio-option"><input type="radio" name="q3" value="no"> Tidak</label>
+              </div>
+            </div>
+          </form>
+          <div id="eligibility-result"></div>
+        </div>
+
+        <!-- REGISTRATION FORM -->
+        <div class="form-card" id="reg-form">
+          <div class="form-title">Borang Pendaftaran</div>
+          <div class="form-sub">Semua medan bertanda <span style="color:#DC2626">*</span> adalah wajib diisi.</div>
+          <form action="#" method="POST" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="nama">Nama Penuh <span>*</span></label>
+                <input class="form-input" type="text" id="nama" name="nama" placeholder="Nama penuh (seperti IC)" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ic">No. IC <span>*</span></label>
+                <input class="form-input" type="text" id="ic" name="ic" placeholder="e.g. 900101-14-5678" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="phone">No. Telefon (WhatsApp) <span>*</span></label>
+                <input class="form-input" type="tel" id="phone" name="phone" placeholder="e.g. 012-345 6789" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Alamat E-mel <span>*</span></label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="nama@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="syarikat">Nama Syarikat / Perniagaan</label>
+              <input class="form-input" type="text" id="syarikat" name="syarikat" placeholder="Nama syarikat atau 'Perniagaan sendiri'">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="jenis">Jenis Perniagaan <span>*</span></label>
+              <select class="form-select" id="jenis" name="jenis" required>
+                <option value="" disabled selected>Pilih jenis perniagaan</option>
+                <option>Pemilik tunggal (Sole Proprietor)</option>
+                <option>Syarikat Sendirian Berhad (Sdn Bhd)</option>
+                <option>Perkongsian (Partnership)</option>
+                <option>Belum ada perniagaan lagi</option>
+                <option>Pekerja / Kakitangan syarikat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="program">Program yang Diminati <span>*</span></label>
+              <select class="form-select" id="program" name="program" required>
+                <option value="" disabled selected>Pilih program</option>
+                <option value="b2b">B2B Wholesale Mastery</option>
+                <option value="ecommerce">eCommerce Fundamentals</option>
+                <option value="digital">Digital Marketing for SMEs</option>
+                <option value="procurement">eProcurement & Supply Chain</option>
+                <option value="unsure">Tidak pasti — minta cadangan</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="sesi">Sesi yang Diinginkan</label>
+                <select class="form-select" id="sesi" name="sesi">
+                  <option value="" disabled selected>Pilih sesi</option>
+                  <option>Sesi 1 — Mei 2025</option>
+                  <option>Sesi 2 — Jun 2025</option>
+                  <option>Sesi 3 — Julai 2025</option>
+                  <option>Fleksibel — mana-mana sesi</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="hrdc">Status HRDC</label>
+                <select class="form-select" id="hrdc" name="hrdc">
+                  <option value="" disabled selected>Pilih satu</option>
+                  <option>Syarikat saya berdaftar HRDC</option>
+                  <option>Tidak pasti — mohon panduan</option>
+                  <option>Tidak berdaftar HRDC</option>
+                  <option>Minta subsidi MARA</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="rujukan">Bagaimana anda tahu tentang eDagang?</label>
+              <select class="form-select" id="rujukan" name="rujukan">
+                <option value="" disabled selected>Pilih sumber</option>
+                <option>Google / Carian internet</option>
+                <option>WhatsApp / Telegram</option>
+                <option>Kawan atau rakan bisnes</option>
+                <option>Portal MARA</option>
+                <option>Portal HRDC</option>
+                <option>Media sosial</option>
+                <option>Lain-lain</option>
+              </select>
+            </div>
+            <button type="submit" class="form-submit">Hantar Pendaftaran →</button>
+            <p class="form-note">Dengan menghantar borang ini, anda bersetuju dengan <a href="#" style="color:var(--purple)">Terma & Syarat</a> dan <a href="#" style="color:var(--purple)">Polisi Privasi</a> eDagang. Maklumat anda tidak akan dikongsi dengan pihak ketiga.</p>
+          </form>
+        </div>
+
+        <!-- SUCCESS MESSAGE -->
+        <div id="success-msg" style="display:none">
+          <div style="background:var(--green-light);border:1.5px solid rgba(22,163,74,0.3);border-radius:var(--radius-lg);padding:40px;text-align:center">
+            <div style="font-size:40px;margin-bottom:16px">✅</div>
+            <h3 style="font-size:22px;font-weight:800;margin-bottom:10px">Pendaftaran Berjaya Dihantar!</h3>
+            <p style="font-size:15px;color:var(--gray-600);max-width:400px;margin:0 auto 24px;line-height:1.7">Terima kasih kerana mendaftar. Pasukan kami akan menghubungi anda melalui WhatsApp dalam masa <strong>24 jam</strong> untuk sahkan tempat anda.</p>
+            <a href="mailto:{{ site.email }}" class="btn btn-wa">✉️ Email us</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Apa yang berlaku selepas anda daftar?</div>
+          <div class="sidebar-item"><div class="sidebar-dot"></div><div class="sidebar-item-text"><strong>Dalam 24 jam:</strong> Pasukan eDagang hubungi anda via WhatsApp untuk sahkan pendaftaran</div></div>
+          <div class="sidebar-item"><div class="sidebar-dot"></div><div class="sidebar-item-text"><strong>Semak HRDC:</strong> Kami bantu anda atau majikan proses tuntutan HRDC jika berkenaan</div></div>
+          <div class="sidebar-item"><div class="sidebar-dot"></div><div class="sidebar-item-text"><strong>Pengesahan tempat:</strong> Tempat disahkan — anda terima e-mel dan WhatsApp confirmation</div></div>
+          <div class="sidebar-item"><div class="sidebar-dot"></div><div class="sidebar-item-text"><strong>Pre-program:</strong> Anda terima bahan pra-program dan akses ke group alumni WhatsApp</div></div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Syarat Asas Peserta</div>
+          <div class="sidebar-item"><div class="sidebar-dot" style="background:var(--green)"></div><div class="sidebar-item-text">Warganegara Malaysia</div></div>
+          <div class="sidebar-item"><div class="sidebar-dot" style="background:var(--green)"></div><div class="sidebar-item-text">Pemilik PKS, usahawan, atau pekerja syarikat</div></div>
+          <div class="sidebar-item"><div class="sidebar-dot" style="background:var(--green)"></div><div class="sidebar-item-text">Perniagaan berdaftar SSM (atau dalam proses)</div></div>
+          <div class="sidebar-item"><div class="sidebar-dot" style="background:var(--green)"></div><div class="sidebar-item-text">Mempunyai smartphone</div></div>
+          <div class="sidebar-item"><div class="sidebar-dot" style="background:var(--green)"></div><div class="sidebar-item-text">Komited hadir semua 5 hari sesi</div></div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Yuran Program</div>
+          <div class="sidebar-item"><div class="sidebar-dot" style="background:var(--orange)"></div><div class="sidebar-item-text"><strong>HRDC Claimable:</strong> Boleh tuntut penuh melalui levy majikan — kos anda mungkin sifar</div></div>
+          <div class="sidebar-item"><div class="sidebar-dot" style="background:var(--orange)"></div><div class="sidebar-item-text"><strong>MARA Subsidised:</strong> Subsidi tersedia untuk usahawan Bumiputera layak</div></div>
+          <div class="sidebar-item"><div class="sidebar-dot" style="background:var(--orange)"></div><div class="sidebar-item-text"><strong>Tidak pasti?</strong> WhatsApp kami untuk semak kelayakan anda secara percuma</div></div>
+        </div>
+        <div class="wa-card">
+          <div style="font-size:24px;margin-bottom:10px">💬</div>
+          <div style="font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px">Ada soalan?</div>
+          <p>E-mel kami — kami bantu anda pilih program yang sesuai dengan keperluan anda.</p>
+          <a href="mailto:{{ site.email }}" class="btn btn-outline-white" style="width:100%;justify-content:center">✉️ Email us</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+// Pre-select program from URL params
+const params = new URLSearchParams(window.location.search);
+const prog = params.get('program');
+if (prog) {
+  const sel = document.getElementById('program');
+  if (sel) {
+    for (let opt of sel.options) { if (opt.value === prog) { opt.selected = true; break; } }
+  }
+  document.getElementById('reg-form').style.display = 'block';
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  document.querySelector('.checker-card').style.display = 'none';
+  document.getElementById('reg-form').style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+  window.scrollTo({ top: document.getElementById('success-msg').offsetTop - 100, behavior: 'smooth' });
+}
+</script>

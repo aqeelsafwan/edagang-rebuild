@@ -1,0 +1,383 @@
+---
+layout: base.njk
+title: "eDagang — Latihan B2B & eCommerce #1 Malaysia"
+description: "Sertai program latihan B2B dan eCommerce terbaik Malaysia. HRDC claimable, diiktiraf MARA & TERAJU. Mulakan atau kembangkan perniagaan borong atas talian anda bersama Borong."
+keywords: "latihan ecommerce malaysia, kursus B2B online, HRDC claimable digital marketing, kursus borong online, latihan PKS Malaysia, eDagang Borong"
+ogTitle: "eDagang — Malaysia's #1 B2B & eCommerce Training for SMEs"
+canonical: "/"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "eDagang",
+    "url": "https://edagang.borong.com",
+    "description": "Malaysia's #1 B2B and eCommerce training platform for SMEs, powered by Borong",
+    "parentOrganization": { "@type": "Organization", "name": "Borong Sdn Bhd" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Kuala Lumpur", "addressCountry": "MY" },
+    "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "telephone": "+60199014355" }
+  }
+pageStyles: |
+  /* Hero */
+  .hero {
+    background: var(--gray-50); padding: 100px 48px 88px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -100px; right: -60px;
+    width: 560px; height: 560px;
+    background: radial-gradient(circle, rgba(74,63,165,0.07) 0%, transparent 68%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -80px; left: 8%;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(232,149,0,0.06) 0%, transparent 68%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .hero .container { position: relative; z-index: 1; }
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--purple-light); color: var(--purple);
+    font-size: 12px; font-weight: 700; padding: 6px 14px;
+    border-radius: 100px; margin-bottom: 28px;
+    border: 1px solid rgba(74,63,165,0.18); letter-spacing: 0.02em;
+  }
+  .hero-pill::before { content: '★'; font-size: 11px; }
+  .hero h1 {
+    font-size: clamp(42px, 5.5vw, 64px); font-weight: 800;
+    line-height: 1.05; letter-spacing: -2px;
+    color: var(--gray-900); margin-bottom: 8px;
+  }
+  .hero h1 .serif { color: var(--purple); font-size: clamp(44px, 5.8vw, 68px); }
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px); color: var(--gray-600);
+    max-width: 620px; margin: 20px 0 36px; font-weight: 400; line-height: 1.7;
+  }
+  .hero-sub strong { color: var(--gray-900); font-weight: 600; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 52px; }
+  .hero-stats {
+    display: flex; gap: 36px; flex-wrap: wrap;
+    border-top: 1px solid var(--gray-200); padding-top: 32px;
+  }
+  .hero-stat .num {
+    font-size: 30px; font-weight: 800; color: var(--purple);
+    letter-spacing: -1px; line-height: 1; margin-bottom: 4px;
+  }
+  .hero-stat .lbl { font-size: 12px; color: var(--gray-400); font-weight: 500; }
+  .persona-icon {
+    width: 46px; height: 46px; background: var(--white);
+    border: 1.5px solid var(--gray-200); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-bottom: 18px;
+  }
+  .persona-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .persona-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; }
+  .prog-card { display: flex; flex-direction: column; }
+  .prog-card .badge { margin-bottom: 16px; }
+  .prog-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+  .prog-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; flex: 1; margin-bottom: 18px; }
+  .prog-meta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+  .prog-meta-item { font-size: 12px; font-weight: 600; color: var(--gray-400); }
+  .prog-link { font-size: 14px; font-weight: 700; color: var(--purple); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: gap 0.2s; }
+  .prog-link:hover { gap: 8px; }
+  .testi-result { font-size: 30px; font-weight: 800; color: var(--orange); letter-spacing: -0.8px; margin-bottom: 3px; }
+  .testi-result-sub { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
+  .testi-quote { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 10px; }
+  .avatar { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--white); flex-shrink: 0; }
+  .author-name { font-size: 13px; font-weight: 600; color: var(--white); }
+  .author-biz  { font-size: 12px; color: rgba(255,255,255,0.45); }
+  .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+  .step { padding-right: 24px; position: relative; }
+  .step:not(:last-child)::after { content: '→'; position: absolute; right: -4px; top: 20px; font-size: 18px; color: var(--gray-200); }
+  .step-num { width: 44px; height: 44px; background: var(--purple-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: var(--purple); margin-bottom: 16px; }
+  .step-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .step-desc { font-size: 13px; color: var(--gray-600); line-height: 1.65; }
+  .powered-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .borong-wordmark { font-size: 42px; font-weight: 800; letter-spacing: -1.5px; color: var(--purple); margin-bottom: 6px; }
+  .borong-wordmark span { color: var(--orange); }
+  .borong-underline { width: 48px; height: 4px; background: var(--orange); border-radius: 2px; margin-bottom: 22px; }
+  .borong-stats { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 24px; }
+  .borong-stat .num { font-size: 24px; font-weight: 800; color: var(--purple); letter-spacing: -0.6px; }
+  .borong-stat .lbl { font-size: 11px; color: var(--gray-400); font-weight: 500; }
+  .feature-row { display: flex; gap: 14px; margin-bottom: 18px; }
+  .feature-row:last-child { margin-bottom: 0; }
+  .feature-icon { width: 34px; height: 34px; background: var(--purple-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .feature-title { font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 3px; }
+  .feature-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+  .faq-list { max-width: 700px; }
+  .faq-item { border-bottom: 1px solid var(--gray-200); }
+  .faq-q { padding: 20px 0; font-size: 15px; font-weight: 600; color: var(--gray-900); display: flex; justify-content: space-between; align-items: center; gap: 16px; user-select: none; }
+  .faq-icon { font-size: 20px; color: var(--gray-400); flex-shrink: 0; font-weight: 400; }
+  .faq-a { padding: 0 0 20px; font-size: 14px; color: var(--gray-600); line-height: 1.75; display: none; }
+  .cta-final { text-align: center; }
+  .cta-final h2 { font-size: clamp(30px,4vw,48px); font-weight: 800; color: var(--white); letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 14px; }
+  .cta-final h2 .serif { color: var(--orange); }
+  .cta-final p { font-size: 17px; color: rgba(255,255,255,0.55); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+  .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  @media(max-width:900px){
+    .hero { padding: 72px 24px 64px; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .step:not(:last-child)::after { display: none; }
+    .powered-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media(max-width:580px){
+    .hero-stats { gap: 24px; }
+    .steps { grid-template-columns: 1fr; }
+  }
+  .animate { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .animate.visible { opacity: 1; transform: none; }
+---
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-pill">Malaysia's #1 B2B & eCommerce Training Platform</div>
+    <h1>Belajar Jual.<br>Belajar Beli.<br><span class="serif">Kembangkan Bisnes.</span></h1>
+    <p class="hero-sub">
+      From zero to borong. eDagang trains <strong>SME owners and entrepreneurs</strong> to buy and sell on B2B platforms, run profitable eCommerce stores, and source smarter — powered by Malaysia's largest wholesale marketplace, Borong.
+    </p>
+    <div class="hero-btns">
+      <a href="#" class="btn btn-primary" aria-disabled="true" style="opacity:0.45;cursor:not-allowed;pointer-events:none;">Maaf, pendaftaran telah ditutup</a>
+      <a href="/programs" class="btn btn-secondary btn-lg">Lihat Semua Program</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">5,000+</div><div class="lbl">Graduan dilatih</div></div>
+      <div class="hero-stat"><div class="num">HRDC</div><div class="lbl">Claimable training</div></div>
+      <div class="hero-stat"><div class="num">MARA</div><div class="lbl">Approved programme</div></div>
+      <div class="hero-stat"><div class="num">5 Hari</div><div class="lbl">Per cohort, KL & Selangor</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span class="trust-bar-label">Diiktiraf oleh</span>
+    <div class="trust-pills">
+      <div class="trust-pill"><span class="dot dot-orange"></span>HRDC Corp</div>
+      <div class="trust-pill"><span class="dot"></span>MARA</div>
+      <div class="trust-pill"><span class="dot"></span>TERAJU</div>
+      <div class="trust-pill"><span class="dot dot-green"></span>Yayasan Peneraju</div>
+      <div class="trust-pill"><span class="dot dot-orange"></span>Borong.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOR WHO -->
+<section>
+  <div class="container">
+    <span class="label-tag">Untuk Siapa</span>
+    <h2 class="section-title">eDagang untuk <span class="serif">siapa?</span></h2>
+    <p class="section-sub">Tak kira sama ada anda baru nak mula atau dah ada bisnes tapi stuck — eDagang ada untuk anda.</p>
+    <div class="grid-auto">
+      <div class="card animate">
+        <div class="persona-icon">🏪</div>
+        <div class="persona-title">SME & Pemilik Perniagaan</div>
+        <div class="persona-desc">Anda ada produk tapi tak tahu macam mana nak jual borong secara online atau masuk B2B marketplace. Kami ajar dari A sampai Z.</div>
+      </div>
+      <div class="card animate" style="transition-delay:0.1s">
+        <div class="persona-icon">🚀</div>
+        <div class="persona-title">Usahawan Baru</div>
+        <div class="persona-desc">Nak mulakan perniagaan tapi tak tahu nak mula dari mana. Kami beri anda struktur, tools, dan jaringan supplier sebenar.</div>
+      </div>
+      <div class="card animate" style="transition-delay:0.2s">
+        <div class="persona-icon">📦</div>
+        <div class="persona-title">Peniaga Runcit & Reseller</div>
+        <div class="persona-desc">Dah jual tapi margin tipis, sumber bekalan tak menentu. Belajar beli borong dengan betul, kurangkan kos, naikkan keuntungan.</div>
+      </div>
+      <div class="card animate" style="transition-delay:0.3s">
+        <div class="persona-icon">🏭</div>
+        <div class="persona-title">Staf Procurement & Operasi</div>
+        <div class="persona-desc">Syarikat anda nak digitize procurement? eDagang latih staf anda cara guna platform eProcurement dan negotiate dengan supplier.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section-bg-gray">
+  <div class="container">
+    <span class="label-tag">Program Kami</span>
+    <h2 class="section-title">Pilih <span class="serif">laluan</span> anda</h2>
+    <p class="section-sub">4 program berbeza, semua direka untuk hasil sebenar — bukan sekadar sijil.</p>
+    <div class="grid-auto">
+      <div class="card prog-card animate">
+        <span class="badge badge-orange">HRDC Claimable</span>
+        <div class="prog-title">B2B Wholesale Mastery</div>
+        <div class="prog-desc">Kuasai jual beli borong atas talian. Dari cari supplier terbaik, set harga, sampai close deal pertama anda di platform Borong.</div>
+        <div class="prog-meta">
+          <span class="prog-meta-item">📅 5 hari</span>
+          <span class="prog-meta-item">📍 KL & Selangor</span>
+        </div>
+        <a href="/programs#b2b" class="prog-link">Ketahui lebih lanjut →</a>
+      </div>
+      <div class="card prog-card animate" style="transition-delay:0.1s">
+        <span class="badge badge-orange">HRDC Claimable</span>
+        <div class="prog-title">eCommerce Fundamentals</div>
+        <div class="prog-desc">Setup kedai Shopee, Lazada & TikTok Shop anda dengan betul. Listing, ads, fulfilment, customer service — semua dalam satu program.</div>
+        <div class="prog-meta">
+          <span class="prog-meta-item">📅 5 hari</span>
+          <span class="prog-meta-item">📍 KL & Selangor</span>
+        </div>
+        <a href="/programs#ecommerce" class="prog-link">Ketahui lebih lanjut →</a>
+      </div>
+      <div class="card prog-card animate" style="transition-delay:0.2s">
+        <span class="badge badge-purple">MARA Approved</span>
+        <div class="prog-title">Digital Marketing for SMEs</div>
+        <div class="prog-desc">Facebook Ads, Google Ads, konten TikTok — belajar cara tarik pelanggan secara digital tanpa membazir bajet ads anda.</div>
+        <div class="prog-meta">
+          <span class="prog-meta-item">📅 5 hari</span>
+          <span class="prog-meta-item">📍 KL & Selangor</span>
+        </div>
+        <a href="/programs#digital" class="prog-link">Ketahui lebih lanjut →</a>
+      </div>
+      <div class="card prog-card animate" style="transition-delay:0.3s">
+        <span class="badge badge-green">Free for Eligible</span>
+        <div class="prog-title">eProcurement & Supply Chain</div>
+        <div class="prog-desc">Untuk syarikat yang nak digitize proses pembelian. Latih staf anda guna platform eProcurement dan benchmark harga dengan AI.</div>
+        <div class="prog-meta">
+          <span class="prog-meta-item">📅 3 hari</span>
+          <span class="prog-meta-item">🌐 Hybrid</span>
+        </div>
+        <a href="/programs#procurement" class="prog-link">Ketahui lebih lanjut →</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="/programs" class="btn btn-primary">Lihat Semua Program</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-bg-purple">
+  <div class="container">
+    <span class="label-tag" style="color:rgba(255,255,255,0.4)">Alumni Results</span>
+    <h2 class="section-title" style="color:var(--white)">Mereka dah <span class="serif" style="color:var(--orange)">buktikan</span> ia boleh.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.6)">Bukan janji. Nombor sebenar dari graduan sebenar.</p>
+    <div class="grid-3">
+      <div class="card-dark animate">
+        <div class="testi-result">RM0 → RM18k/bln</div>
+        <div class="testi-result-sub">dalam 4 bulan</div>
+        <div class="testi-quote">"Sebelum eDagang saya tak tahu pun apa itu borong online. Lepas program, saya dah jadi reseller aktif kat Borong.com dan untung lebih dari kerja tetap saya."</div>
+        <div class="testi-author">
+          <div class="avatar">AN</div>
+          <div><div class="author-name">Amirah N.</div><div class="author-biz">Reseller FMCG, Shah Alam</div></div>
+        </div>
+      </div>
+      <div class="card-dark animate" style="transition-delay:0.1s">
+        <div class="testi-result">3× kali ganda</div>
+        <div class="testi-result-sub">dalam 6 bulan selepas program</div>
+        <div class="testi-quote">"eDagang tunjukkan saya cara betul buat listing, ads, dan manage stok. Sekarang order tak berhenti-henti."</div>
+        <div class="testi-author">
+          <div class="avatar">RH</div>
+          <div><div class="author-name">Razif H.</div><div class="author-biz">Peniaga Makanan, Petaling Jaya</div></div>
+        </div>
+      </div>
+      <div class="card-dark animate" style="transition-delay:0.2s">
+        <div class="testi-result">Jimat RM42k/tahun</div>
+        <div class="testi-result-sub">kos procurement</div>
+        <div class="testi-quote">"Syarikat kami guna program eProcurement eDagang untuk latih team purchasing. Sekarang semua PO digital dan audit lebih mudah."</div>
+        <div class="testi-author">
+          <div class="avatar">SL</div>
+          <div><div class="author-name">Sarah L.</div><div class="author-biz">Pengurus Operasi, Pembinaan</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="container">
+    <span class="label-tag">Cara Ia Berfungsi</span>
+    <h2 class="section-title">Dari daftar <span class="serif">ke duit.</span></h2>
+    <p class="section-sub">4 langkah mudah untuk mulakan perjalanan anda bersama eDagang.</p>
+    <div class="steps">
+      <div class="step animate">
+        <div class="step-num">1</div>
+        <div class="step-title">Semak kelayakan</div>
+        <div class="step-desc">Warganegara Malaysia, PKS atau usahawan, ada smartphone. Itu sahaja syarat asas.</div>
+      </div>
+      <div class="step animate" style="transition-delay:0.1s">
+        <div class="step-num">2</div>
+        <div class="step-title">Pilih program</div>
+        <div class="step-desc">B2B, eCommerce, Digital Marketing, atau Procurement — pilih ikut keperluan bisnes anda.</div>
+      </div>
+      <div class="step animate" style="transition-delay:0.2s">
+        <div class="step-num">3</div>
+        <div class="step-title">Hadiri latihan</div>
+        <div class="step-desc">5 hari intensif. Hands-on, bukan teori. Jurulatih berpengalaman dari industri sebenar.</div>
+      </div>
+      <div class="step animate" style="transition-delay:0.3s">
+        <div class="step-num">4</div>
+        <div class="step-title">Mula jana hasil</div>
+        <div class="step-desc">Akses ke platform Borong, rangkaian supplier, dan komuniti alumni yang aktif.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POWERED BY BORONG -->
+<section class="section-bg-gray">
+  <div class="container">
+    <div class="powered-grid">
+      <div>
+        <span class="label-tag">Powered By</span>
+        <img src="/img/borong-logo.png" alt="Borong" style="height:64px;width:auto;display:block;margin-bottom:16px;">
+        <div class="borong-underline"></div>
+        <p style="font-size:15px;color:var(--gray-600);line-height:1.75;max-width:420px">
+          eDagang dibina di atas infrastruktur dan data <strong>Borong</strong> — marketplace B2B terbesar Malaysia, dipercayai oleh Petronas, Shell, dan lebih 50,000 PKS di seluruh negara.
+        </p>
+        <p style="font-size:15px;color:var(--gray-600);line-height:1.75;max-width:420px;margin-top:12px">
+          Apabila anda belajar bersama eDagang, anda bukan belajar teori — anda belajar di atas platform yang perniagaan sebenar gunakan setiap hari.
+        </p>
+        <div class="borong-stats">
+          <div class="borong-stat"><div class="num">50k+</div><div class="lbl">SME aktif di Borong</div></div>
+          <div class="borong-stat"><div class="num">USD 49M</div><div class="lbl">GMV (FY2025)</div></div>
+          <div class="borong-stat"><div class="num">YC W20</div><div class="lbl">Y Combinator</div></div>
+        </div>
+      </div>
+      <div class="card" style="padding:32px">
+        <div style="font-size:12px;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:22px">Kenapa latihan Borong-powered menang</div>
+        <div class="feature-row">
+          <div class="feature-icon">📊</div>
+          <div><div class="feature-title">Data harga sebenar</div><div class="feature-desc">Belajar benchmark harga supplier dengan MIDAS — alat AI Borong untuk price intelligence</div></div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-icon">🔗</div>
+          <div><div class="feature-title">Rangkaian supplier langsung</div><div class="feature-desc">Graduan dapat akses terus ke rangkaian supplier terverifikasi Borong — mula beli borong dari hari pertama</div></div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-icon">🏢</div>
+          <div><div class="feature-title">Kredibiliti enterprise</div><div class="feature-desc">Platform yang sama digunakan oleh Petronas dan Shell. Latihan anda ada berat sebenar.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <span class="label-tag">Soalan Lazim</span>
+    <h2 class="section-title">Ada <span class="serif">soalan?</span></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">Adakah program ini percuma? <span class="faq-icon">+</span></div><div class="faq-a">Bergantung kepada program dan kelayakan anda. Beberapa program ditawarkan percuma melalui MARA dan Peneraju. Program lain adalah HRDC claimable — majikan anda boleh tuntut kos latihan melalui akaun levy HRD Corp. Hubungi kami untuk semak kelayakan anda.</div></div>
+      <div class="faq-item"><div class="faq-q">Siapa yang layak menyertai? <span class="faq-icon">+</span></div><div class="faq-a">Warganegara Malaysia, pemilik PKS atau usahawan, perniagaan berdaftar SSM, dan mempunyai smartphone. Sesetengah program memerlukan lesen perniagaan dalam kawasan tertentu. Semak halaman program untuk syarat penuh.</div></div>
+      <div class="faq-item"><div class="faq-q">Apakah itu HRDC claimable? <span class="faq-icon">+</span></div><div class="faq-a">HRD Corp mengumpul levy latihan dari majikan di Malaysia. Jika syarikat anda caruman KWSP, anda mungkin layak tuntut kos latihan eDagang melalui sistem HRD Corp — yuran latihan boleh dikurangkan kepada sifar.</div></div>
+      <div class="faq-item"><div class="faq-q">Boleh saya join secara online? <span class="faq-icon">+</span></div><div class="faq-a">Kebanyakan program dijalankan secara fizikal di KL dan Selangor kerana sifat latihan yang hands-on. Program Procurement tersedia dalam format hybrid.</div></div>
+      <div class="faq-item"><div class="faq-q">Adakah eDagang berkaitan dengan Borong / Dropee? <span class="faq-icon">+</span></div><div class="faq-a">Ya. eDagang ialah platform latihan rasmi yang dibina oleh Borong (dahulunya Dropee) — Malaysia's leading B2B wholesale marketplace. Anda belajar terus dari syarikat yang membina dan mengendalikan platform B2B terbesar di Malaysia.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section-bg-dark">
+  <div class="container cta-final">
+    <h2>Berhenti scroll.<br><span class="serif">Mula buat.</span></h2>
+    <p>Tempat terhad setiap sesi. Daftar sekarang dan mulakan perjalanan bisnes digital anda bersama eDagang.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn btn-outline-white" aria-disabled="true" style="opacity:0.45;cursor:not-allowed;pointer-events:none;">Pendaftaran ditutup</a>
+    </div>
+  </div>
+</section>

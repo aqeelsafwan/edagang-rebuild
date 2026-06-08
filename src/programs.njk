@@ -1,0 +1,244 @@
+---
+layout: base.njk
+title: "Program Latihan B2B & eCommerce | eDagang by Borong"
+description: "4 program latihan B2B dan eCommerce untuk PKS Malaysia. HRDC claimable, MARA approved. B2B Wholesale, eCommerce, Digital Marketing, eProcurement."
+canonical: "/programs"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "eDagang Training Programmes",
+    "itemListElement": [
+      {"@type":"Course","position":1,"name":"B2B Wholesale Mastery","description":"Master B2B wholesale trading online with Borong","provider":{"@type":"Organization","name":"eDagang"}},
+      {"@type":"Course","position":2,"name":"eCommerce Fundamentals","description":"Build and grow your Shopee, Lazada and TikTok Shop","provider":{"@type":"Organization","name":"eDagang"}},
+      {"@type":"Course","position":3,"name":"Digital Marketing for SMEs","description":"Facebook Ads, Google Ads and TikTok content for business","provider":{"@type":"Organization","name":"eDagang"}},
+      {"@type":"Course","position":4,"name":"eProcurement & Supply Chain","description":"Digitise your company procurement with Borong platform","provider":{"@type":"Organization","name":"eDagang"}}
+    ]
+  }
+pageStyles: |
+  .filter-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px; }
+  .filter-tab {
+    padding:8px 20px; border-radius:100px; font-size:13px; font-weight:600;
+    border:1.5px solid var(--gray-200); background:var(--white); color:var(--gray-600);
+    cursor:pointer; transition:all 0.15s; font-family:'Plus Jakarta Sans',sans-serif;
+  }
+  .filter-tab:hover, .filter-tab.active { background:var(--purple); color:var(--white); border-color:var(--purple); }
+  .prog-full-card {
+    background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg);
+    overflow:hidden; transition:all 0.2s; scroll-margin-top:90px;
+  }
+  .prog-full-card:hover { border-color:var(--purple); box-shadow:var(--shadow-md); }
+  .prog-card-header { padding:32px 32px 24px; }
+  .prog-card-body { padding:0 32px 32px; display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+  .prog-card-divider { height:1px; background:var(--gray-200); margin:0 32px 28px; }
+  .prog-title-lg { font-size:24px; font-weight:800; letter-spacing:-0.5px; margin:10px 0 12px; }
+  .prog-desc-lg { font-size:15px; color:var(--gray-600); line-height:1.75; }
+  .syllabus-list { list-style:none; }
+  .syllabus-list li { font-size:14px; color:var(--gray-600); padding:8px 0; border-bottom:1px solid var(--gray-100); display:flex; gap:10px; align-items:flex-start; }
+  .syllabus-list li:last-child { border-bottom:none; }
+  .syllabus-list li::before { content:'✓'; color:var(--purple); font-weight:700; flex-shrink:0; margin-top:1px; }
+  .info-col-title { font-size:12px; font-weight:700; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; }
+  .info-row { display:flex; gap:10px; align-items:center; margin-bottom:10px; }
+  .info-row-label { font-size:13px; color:var(--gray-400); min-width:90px; }
+  .info-row-val { font-size:13px; font-weight:600; color:var(--gray-900); }
+  .fee-box { background:var(--purple-light); border:1px solid rgba(74,63,165,0.15); border-radius:var(--radius-sm); padding:14px 16px; margin-top:16px; }
+  .fee-box-title { font-size:12px; font-weight:700; color:var(--purple); text-transform:uppercase; letter-spacing:0.07em; margin-bottom:4px; }
+  .fee-box-desc { font-size:13px; color:var(--purple-dark); line-height:1.6; }
+  .prog-cta-row { margin-top:24px; display:flex; gap:12px; }
+  @media(max-width:720px){
+    .prog-card-body { grid-template-columns:1fr; gap:20px; }
+    .prog-card-header, .prog-card-body { padding-left:20px; padding-right:20px; }
+    .prog-card-divider { margin:0 20px 20px; }
+  }
+---
+
+<div class="page-hero">
+  <div class="container">
+    <span class="label-tag">Program Latihan</span>
+    <h1 class="page-hero-title">Pilih Laluan <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--purple)">Anda</span></h1>
+    <p class="page-hero-sub">4 program berbeza, semua direka untuk hasil sebenar. Pilih ikut keperluan bisnes anda sekarang.</p>
+    <div class="filter-tabs" style="margin-top:28px;margin-bottom:0">
+      <button class="filter-tab active" onclick="filterPrograms('all',this)">Semua</button>
+      <button class="filter-tab" onclick="filterPrograms('b2b',this)">B2B Wholesale</button>
+      <button class="filter-tab" onclick="filterPrograms('ecommerce',this)">eCommerce</button>
+      <button class="filter-tab" onclick="filterPrograms('digital',this)">Digital Marketing</button>
+      <button class="filter-tab" onclick="filterPrograms('procurement',this)">Procurement</button>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container" style="display:flex;flex-direction:column;gap:24px">
+
+    <!-- B2B -->
+    <div class="prog-full-card" id="b2b" data-cat="b2b">
+      <div class="prog-card-header">
+        <span class="badge badge-orange">HRDC Claimable</span>
+        <div class="prog-title-lg">B2B Wholesale Mastery</div>
+        <p class="prog-desc-lg">Kuasai seni jual beli borong atas talian dari A sampai Z. Program ini dibina atas infrastruktur sebenar Borong.com — marketplace B2B terbesar Malaysia. Anda bukan belajar teori, anda belajar sambil buat.</p>
+      </div>
+      <div class="prog-card-divider"></div>
+      <div class="prog-card-body">
+        <div>
+          <div class="info-col-title">Silibus Program</div>
+          <ul class="syllabus-list">
+            <li>Cara cari, verify dan onboard supplier borong yang dipercayai</li>
+            <li>Strategi penetapan harga, margin dan keuntungan borong</li>
+            <li>Setup dan optimise profil penjual di platform Borong.com</li>
+            <li>Cara buat dan close deal borong pertama anda</li>
+            <li>Pengurusan stok, PO dan fulfillment borong</li>
+            <li>Bina rangkaian buyer dan supplier jangka panjang</li>
+          </ul>
+        </div>
+        <div>
+          <div class="info-col-title">Maklumat Program</div>
+          <div class="info-row"><span class="info-row-label">📅 Tempoh</span><span class="info-row-val">5 hari (intensif)</span></div>
+          <div class="info-row"><span class="info-row-label">📍 Lokasi</span><span class="info-row-val">KL & Selangor</span></div>
+          <div class="info-row"><span class="info-row-label">🎓 Format</span><span class="info-row-val">Fizikal, hands-on</span></div>
+          <div class="info-row"><span class="info-row-label">👥 Untuk siapa</span><span class="info-row-val">SME, reseller, usahawan</span></div>
+          <div class="info-row"><span class="info-row-label">📋 Syarat</span><span class="info-row-val">Warganegara Malaysia, ada SSM</span></div>
+          <div class="fee-box">
+            <div class="fee-box-title">HRDC Claimable</div>
+            <div class="fee-box-desc">Majikan boleh tuntut yuran melalui akaun levy HRD Corp. Kos latihan anda boleh menjadi sifar.</div>
+          </div>
+          <div class="prog-cta-row">
+            <a href="#" class="btn btn-primary" aria-disabled="true" style="opacity:0.45;cursor:not-allowed;pointer-events:none;">Pendaftaran ditutup</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ECOMMERCE -->
+    <div class="prog-full-card" id="ecommerce" data-cat="ecommerce">
+      <div class="prog-card-header">
+        <span class="badge badge-orange">HRDC Claimable</span>
+        <div class="prog-title-lg">eCommerce Fundamentals</div>
+        <p class="prog-desc-lg">Dari setup kedai sampai ke first sale. Belajar cara buat kedai Shopee, Lazada, dan TikTok Shop yang betul-betul menjual — bukan sekadar ada, tapi yang pelanggan cari dan beli.</p>
+      </div>
+      <div class="prog-card-divider"></div>
+      <div class="prog-card-body">
+        <div>
+          <div class="info-col-title">Silibus Program</div>
+          <ul class="syllabus-list">
+            <li>Setup dan optimasi kedai Shopee, Lazada & TikTok Shop</li>
+            <li>Product listing, fotografi produk & copywriting yang menjual</li>
+            <li>Strategi ads dengan bajet kecil — ROI maksimum</li>
+            <li>Fulfillment, logistik, dan pengurusan pesanan</li>
+            <li>Customer service dan pengurusan ulasan</li>
+            <li>Analisis data jualan dan strategi scaling</li>
+          </ul>
+        </div>
+        <div>
+          <div class="info-col-title">Maklumat Program</div>
+          <div class="info-row"><span class="info-row-label">📅 Tempoh</span><span class="info-row-val">5 hari (intensif)</span></div>
+          <div class="info-row"><span class="info-row-label">📍 Lokasi</span><span class="info-row-val">KL & Selangor</span></div>
+          <div class="info-row"><span class="info-row-label">🎓 Format</span><span class="info-row-val">Fizikal, hands-on</span></div>
+          <div class="info-row"><span class="info-row-label">👥 Untuk siapa</span><span class="info-row-val">Penjual baru & sedia ada</span></div>
+          <div class="info-row"><span class="info-row-label">📋 Syarat</span><span class="info-row-val">Smartphone & niat kuat</span></div>
+          <div class="fee-box">
+            <div class="fee-box-title">HRDC Claimable</div>
+            <div class="fee-box-desc">Majikan boleh tuntut yuran melalui akaun levy HRD Corp. Kos latihan anda boleh menjadi sifar.</div>
+          </div>
+          <div class="prog-cta-row">
+            <a href="#" class="btn btn-primary" aria-disabled="true" style="opacity:0.45;cursor:not-allowed;pointer-events:none;">Pendaftaran ditutup</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIGITAL MARKETING -->
+    <div class="prog-full-card" id="digital" data-cat="digital">
+      <div class="prog-card-header">
+        <span class="badge badge-purple">MARA Approved</span>
+        <div class="prog-title-lg">Digital Marketing for SMEs</div>
+        <p class="prog-desc-lg">Belajar tarik pelanggan secara digital tanpa membazir duit. Facebook Ads, Google, TikTok — semua dalam satu program yang direka khas untuk peniaga kecil dan sederhana Malaysia.</p>
+      </div>
+      <div class="prog-card-divider"></div>
+      <div class="prog-card-body">
+        <div>
+          <div class="info-col-title">Silibus Program</div>
+          <ul class="syllabus-list">
+            <li>Facebook & Instagram Ads dari sifar — setup hingga launch</li>
+            <li>Strategi konten TikTok yang organik dan yang berbayar</li>
+            <li>Google Ads & SEO asas untuk perniagaan tempatan</li>
+            <li>Membina brand di media sosial dengan konsisten</li>
+            <li>Email marketing dan WhatsApp broadcast untuk retention</li>
+            <li>Ukur ROI & optimasi kempen iklan anda</li>
+          </ul>
+        </div>
+        <div>
+          <div class="info-col-title">Maklumat Program</div>
+          <div class="info-row"><span class="info-row-label">📅 Tempoh</span><span class="info-row-val">5 hari (intensif)</span></div>
+          <div class="info-row"><span class="info-row-label">📍 Lokasi</span><span class="info-row-val">KL & Selangor</span></div>
+          <div class="info-row"><span class="info-row-label">🎓 Format</span><span class="info-row-val">Fizikal, hands-on</span></div>
+          <div class="info-row"><span class="info-row-label">👥 Untuk siapa</span><span class="info-row-val">Pemilik bisnes urus sendiri marketing</span></div>
+          <div class="info-row"><span class="info-row-label">📋 Syarat</span><span class="info-row-val">Bumiputera, perniagaan aktif SSM</span></div>
+          <div class="fee-box" style="background:var(--purple-light);border-color:rgba(74,63,165,0.15)">
+            <div class="fee-box-title">MARA Subsidised</div>
+            <div class="fee-box-desc">Bantuan kewangan dan subsidi latihan tersedia untuk usahawan Bumiputera yang layak.</div>
+          </div>
+          <div class="prog-cta-row">
+            <a href="#" class="btn btn-primary" aria-disabled="true" style="opacity:0.45;cursor:not-allowed;pointer-events:none;">Pendaftaran ditutup</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROCUREMENT -->
+    <div class="prog-full-card" id="procurement" data-cat="procurement">
+      <div class="prog-card-header">
+        <span class="badge badge-green">Free for Eligible</span>
+        <div class="prog-title-lg">eProcurement & Supply Chain</div>
+        <p class="prog-desc-lg">Untuk syarikat yang nak digitize proses pembelian. Latih staf anda cara guna platform eProcurement moden, automate Purchase Orders, dan benchmark harga dengan MIDAS — alat AI Borong.</p>
+      </div>
+      <div class="prog-card-divider"></div>
+      <div class="prog-card-body">
+        <div>
+          <div class="info-col-title">Silibus Program</div>
+          <ul class="syllabus-list">
+            <li>Pengenalan eProcurement dan kenapa ia penting untuk PKS</li>
+            <li>Cara guna platform eProcurement Borong dari mula</li>
+            <li>Automate Purchase Orders (PO) dan proses kelulusan</li>
+            <li>Price benchmarking dengan MIDAS AI — jimat kos procurement</li>
+            <li>Pengurusan supplier digital dan vendor evaluation</li>
+            <li>Penyediaan laporan dan audit trail digital</li>
+          </ul>
+        </div>
+        <div>
+          <div class="info-col-title">Maklumat Program</div>
+          <div class="info-row"><span class="info-row-label">📅 Tempoh</span><span class="info-row-val">3 hari</span></div>
+          <div class="info-row"><span class="info-row-label">📍 Lokasi</span><span class="info-row-val">KL + Remote (Hybrid)</span></div>
+          <div class="info-row"><span class="info-row-label">🎓 Format</span><span class="info-row-val">Hybrid (online + fizikal)</span></div>
+          <div class="info-row"><span class="info-row-label">👥 Untuk siapa</span><span class="info-row-val">Staf procurement, operasi, GLC</span></div>
+          <div class="info-row"><span class="info-row-label">📋 Syarat</span><span class="info-row-val">Syarikat berdaftar Malaysia</span></div>
+          <div class="fee-box" style="background:var(--green-light);border-color:rgba(22,163,74,0.2)">
+            <div class="fee-box-title" style="color:var(--green)">Percuma untuk Syarikat Layak</div>
+            <div class="fee-box-desc" style="color:#14532d">Program ini percuma untuk syarikat yang memenuhi kriteria kelayakan. Hubungi kami untuk semak.</div>
+          </div>
+          <div class="prog-cta-row">
+            <a href="#" class="btn btn-primary" aria-disabled="true" style="opacity:0.45;cursor:not-allowed;pointer-events:none;">Pendaftaran ditutup</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-bg-gray" style="padding:48px">
+  <div class="container" style="text-align:center">
+    <h3 style="font-size:22px;font-weight:700;margin-bottom:10px">Tak pasti program mana sesuai untuk anda?</h3>
+    <p style="color:var(--gray-600);margin-bottom:24px">Hubungi kami supaya kami dapat bantu anda pilih program yang paling sesuai dengan keperluan bisnes anda.</p>
+    <a href="mailto:{{ site.email }}" class="btn btn-wa btn-lg">✉️ Email kami</a>
+  </div>
+</section>
+
+<script>
+function filterPrograms(cat, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.prog-full-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+</script>

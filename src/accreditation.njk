@@ -1,0 +1,165 @@
+---
+layout: base.njk
+title: "HRDC Claimable & Akreditasi Program | eDagang"
+description: "Program eDagang diiktiraf HRDC Corp, MARA, TERAJU dan Yayasan Peneraju. Ketahui cara tuntut kos latihan anda — yuran boleh menjadi sifar."
+canonical: "/accreditation"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Adakah program eDagang HRDC claimable?","acceptedAnswer":{"@type":"Answer","text":"Ya. Program eDagang diiktiraf oleh HRD Corp (Human Resource Development Corporation). Majikan yang berdaftar dengan HRD Corp boleh tuntut yuran latihan melalui akaun levy syarikat mereka."}},
+      {"@type":"Question","name":"Berapa lama proses tuntutan HRDC?","acceptedAnswer":{"@type":"Answer","text":"Proses tuntutan HRDC biasanya mengambil masa 30 hingga 60 hari bekerja selepas permohonan lengkap dikemukakan."}},
+      {"@type":"Question","name":"Siapa yang layak untuk tuntutan HRDC?","acceptedAnswer":{"@type":"Answer","text":"Majikan yang mendaftarkan syarikat dengan HRD Corp dan membayar levy latihan layak membuat tuntutan. Pekerja yang dicarum KWSP oleh majikan layak menyertai program yang dituntut."}}
+    ]
+  }
+pageStyles: |
+  .accred-hero { background:var(--purple); padding:80px 48px; }
+  .accred-hero h1 { color:var(--white); font-size:clamp(30px,4vw,50px); font-weight:800; letter-spacing:-1.2px; line-height:1.1; margin-bottom:14px; }
+  .accred-hero h1 span { font-family:'Instrument Serif',serif; font-style:italic; font-weight:400; color:var(--orange); }
+  .accred-hero p { color:rgba(255,255,255,0.65); font-size:18px; max-width:560px; line-height:1.7; }
+  .accred-card {
+    background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg);
+    padding:32px; transition:all 0.2s;
+  }
+  .accred-card:hover { border-color:var(--purple); box-shadow:var(--shadow-md); }
+  .accred-card-icon { font-size:32px; margin-bottom:16px; }
+  .accred-card-name { font-size:20px; font-weight:800; letter-spacing:-0.4px; margin-bottom:4px; }
+  .accred-card-org { font-size:13px; color:var(--gray-400); font-weight:500; margin-bottom:16px; }
+  .accred-card-desc { font-size:14px; color:var(--gray-600); line-height:1.75; margin-bottom:20px; }
+  .accred-card-eli { background:var(--gray-50); border-radius:var(--radius-sm); padding:14px 16px; margin-top:auto; }
+  .accred-card-eli-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:6px; }
+  .accred-card-eli-val { font-size:13px; color:var(--gray-700); line-height:1.6; }
+  .steps-visual { display:grid; grid-template-columns:repeat(3,1fr); gap:0; position:relative; }
+  .steps-visual::before { content:''; position:absolute; top:24px; left:calc(100%/6); right:calc(100%/6); height:2px; background:var(--gray-200); z-index:0; }
+  .vstep { text-align:center; position:relative; z-index:1; padding:0 16px; }
+  .vstep-circle { width:48px; height:48px; border-radius:50%; background:var(--purple); color:var(--white); font-size:18px; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; position:relative; z-index:1; }
+  .vstep-title { font-size:15px; font-weight:700; margin-bottom:8px; }
+  .vstep-desc { font-size:13px; color:var(--gray-600); line-height:1.65; }
+  .faq-list { max-width:700px; }
+  .faq-item { border-bottom:1px solid var(--gray-200); }
+  .faq-q { padding:20px 0; font-size:15px; font-weight:600; display:flex; justify-content:space-between; align-items:center; gap:16px; user-select:none; }
+  .faq-icon { font-size:20px; color:var(--gray-400); flex-shrink:0; font-weight:400; }
+  .faq-a { padding:0 0 20px; font-size:14px; color:var(--gray-600); line-height:1.75; display:none; }
+  @media(max-width:720px){ .steps-visual { grid-template-columns:1fr; gap:24px; } .steps-visual::before { display:none; } .accred-hero { padding:56px 24px; } }
+---
+
+<div class="accred-hero">
+  <div class="container">
+    <span class="label-tag" style="color:rgba(255,255,255,0.4)">Akreditasi</span>
+    <h1>Latihan Kami Diiktiraf.<br><span>Kos Anda Mungkin Sifar.</span></h1>
+    <p>Program eDagang diiktiraf oleh badan-badan utama Malaysia. Ini bermakna anda atau majikan anda mungkin layak untuk tuntut balik kos latihan — sepenuhnya.</p>
+  </div>
+</div>
+
+<!-- ACCREDITATION CARDS -->
+<section>
+  <div class="container">
+    <span class="label-tag">Badan Pengiktiraf</span>
+    <h2 class="section-title">Diiktiraf oleh <span class="serif">4 badan utama</span></h2>
+    <p class="section-sub">Setiap pengiktirafan membuka laluan bantuan kewangan yang berbeza untuk peserta program eDagang.</p>
+    <div class="grid-2">
+      <div class="accred-card animate">
+        <div class="accred-card-icon">🏛️</div>
+        <div class="accred-card-name">HRDC Corp</div>
+        <div class="accred-card-org">Human Resource Development Corporation</div>
+        <div class="accred-card-desc">Ini adalah cara paling biasa peserta eDagang mengurangkan kos latihan mereka kepada sifar. Jika majikan anda berdaftar dengan HRD Corp dan membayar levy bulanan, yuran latihan anda boleh dituntut sepenuhnya melalui sistem HRDC.</div>
+        <div class="accred-card-eli">
+          <div class="accred-card-eli-label">Syarat Kelayakan</div>
+          <div class="accred-card-eli-val">Majikan berdaftar HRD Corp · Pekerja dicarum KWSP · Syarikat di Malaysia</div>
+        </div>
+        <div style="margin-top:20px"><span class="badge badge-orange">Claimable — Kos Boleh Jadi Sifar</span></div>
+      </div>
+      <div class="accred-card animate" style="transition-delay:0.1s">
+        <div class="accred-card-icon">🤝</div>
+        <div class="accred-card-name">MARA</div>
+        <div class="accred-card-org">Majlis Amanah Rakyat</div>
+        <div class="accred-card-desc">Program Digital Marketing for SMEs eDagang diluluskan MARA untuk usahawan Bumiputera. Bantuan kewangan dan subsidi latihan tersedia untuk peserta yang layak di bawah program pembangunan usahawan MARA.</div>
+        <div class="accred-card-eli">
+          <div class="accred-card-eli-label">Syarat Kelayakan</div>
+          <div class="accred-card-eli-val">Warganegara Bumiputera · Perniagaan aktif SSM · Usahawan atau pemilik bisnes</div>
+        </div>
+        <div style="margin-top:20px"><span class="badge badge-purple">Subsidised — Bantuan Kewangan Tersedia</span></div>
+      </div>
+      <div class="accred-card animate" style="transition-delay:0.2s">
+        <div class="accred-card-icon">⭐</div>
+        <div class="accred-card-name">TERAJU & Yayasan Peneraju</div>
+        <div class="accred-card-org">Unit Peneraju Agenda Bumiputera</div>
+        <div class="accred-card-desc">Program eDagang diiktiraf untuk agenda keusahawanan digital Bumiputera di bawah TERAJU dan Yayasan Peneraju. Peserta yang layak boleh mendapat bantuan tambahan melalui program-program Peneraju.</div>
+        <div class="accred-card-eli">
+          <div class="accred-card-eli-label">Syarat Kelayakan</div>
+          <div class="accred-card-eli-val">Bumiputera · Usahawan digital · Layak di bawah program Peneraju</div>
+        </div>
+        <div style="margin-top:20px"><span class="badge badge-purple">Recognised — Layak untuk Bantuan Peneraju</span></div>
+      </div>
+      <div class="accred-card animate" style="transition-delay:0.3s">
+        <div class="accred-card-icon">🏆</div>
+        <div class="accred-card-name">SME Corp Aligned</div>
+        <div class="accred-card-org">SME Corporation Malaysia</div>
+        <div class="accred-card-desc">Program eDagang selaras dengan Pelan Digitalisasi PKS Malaysia 2025–2030 di bawah SME Corp. Ini memastikan latihan anda relevan dengan hala tuju ekonomi digital negara dan memenuhi keperluan grant-grant SME Corp.</div>
+        <div class="accred-card-eli">
+          <div class="accred-card-eli-label">Relevansi</div>
+          <div class="accred-card-eli-val">PKS berdaftar · Selaras dengan agenda digitalisasi SME Corp · Sokongan grant</div>
+        </div>
+        <div style="margin-top:20px"><span class="badge badge-gray">Aligned — Selaras Agenda Digitalisasi</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO CLAIM -->
+<section class="section-bg-gray">
+  <div class="container">
+    <span class="label-tag">Cara Tuntutan HRDC</span>
+    <h2 class="section-title">3 langkah <span class="serif">mudah</span> tuntut HRDC</h2>
+    <p class="section-sub">Proses tuntutan HRDC tidaklah serumit yang disangka. Berikut adalah cara ia berfungsi.</p>
+    <div class="steps-visual">
+      <div class="vstep animate">
+        <div class="vstep-circle">1</div>
+        <div class="vstep-title">Majikan Daftar Program</div>
+        <div class="vstep-desc">Majikan log masuk ke sistem HRD Corp dan daftarkan pekerja untuk program eDagang. Pilih program dan tarikh sesi yang dikehendaki.</div>
+      </div>
+      <div class="vstep animate" style="transition-delay:0.15s">
+        <div class="vstep-circle">2</div>
+        <div class="vstep-title">Pekerja Hadiri Latihan</div>
+        <div class="vstep-desc">Pekerja hadir dan lengkapkan semua sesi latihan. Kehadiran penuh diperlukan. Sijil tamat latihan akan diberikan.</div>
+      </div>
+      <div class="vstep animate" style="transition-delay:0.3s">
+        <div class="vstep-circle">3</div>
+        <div class="vstep-title">Majikan Submit Tuntutan</div>
+        <div class="vstep-desc">Majikan kemukakan tuntutan melalui sistem HRD Corp dengan dokumen sokongan. Bayaran balik dalam masa 30–60 hari.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;padding:32px;background:var(--white);border-radius:var(--radius-lg);border:1.5px solid var(--gray-200);max-width:600px;margin-left:auto;margin-right:auto">
+      <div style="font-size:13px;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px">Perlukan Bantuan?</div>
+      <p style="font-size:15px;color:var(--gray-600);line-height:1.7;margin-bottom:20px">Tim eDagang boleh panduan anda dan majikan anda melalui proses tuntutan HRDC dari mula hingga selesai. Hubungi kami sekarang.</p>
+      <a href="mailto:{{ site.email }}" class="btn btn-wa">✉️ Email kami</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <span class="label-tag">Soalan Lazim — Akreditasi</span>
+    <h2 class="section-title">Soalan <span class="serif">yang selalu ditanya</span></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">Berapa lama proses tuntutan HRDC? <span class="faq-icon">+</span></div><div class="faq-a">Proses tuntutan HRDC biasanya mengambil masa 30 hingga 60 hari bekerja selepas semua dokumen lengkap dikemukakan. Ini bergantung kepada kelengkapan dokumen dan waktu pemprosesan HRD Corp.</div></div>
+      <div class="faq-item"><div class="faq-q">Boleh individu (bukan syarikat) tuntut HRDC? <span class="faq-icon">+</span></div><div class="faq-a">Tuntutan HRDC dibuat oleh majikan, bukan pekerja secara individu. Jika anda seorang pekerja, majikan anda yang perlu membuat tuntutan bagi pihak anda. Jika anda pemilik perniagaan bersendirian (sole proprietor) dan daftar sendiri dengan HRD Corp, anda layak membuat tuntutan sendiri.</div></div>
+      <div class="faq-item"><div class="faq-q">Apa dokumen yang diperlukan untuk tuntutan HRDC? <span class="faq-icon">+</span></div><div class="faq-a">Dokumen biasa yang diperlukan: invois program eDagang, senarai kehadiran peserta, sijil tamat latihan, dan bukti pembayaran. Tim kami akan bantu anda sediakan semua dokumen yang diperlukan.</div></div>
+      <div class="faq-item"><div class="faq-q">Kalau saya tak layak HRDC, ada pilihan lain? <span class="faq-icon">+</span></div><div class="faq-a">Ya. Bergantung kepada profil anda, anda mungkin layak untuk subsidi MARA (Bumiputera), bantuan Peneraju, atau program percuma eDagang untuk PKS tertentu. Hubungi kami dan kami akan bantu cari opsyen terbaik untuk anda.</div></div>
+      <div class="faq-item"><div class="faq-q">Boleh satu syarikat hantar beberapa pekerja? <span class="faq-icon">+</span></div><div class="faq-a">Ya, syarikat boleh mendaftarkan lebih daripada seorang pekerja dalam program yang sama atau berbeza. Tuntutan HRDC boleh dibuat untuk setiap pekerja secara berasingan, tertakluk kepada baki levy syarikat.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-bg-dark" style="padding:64px 48px;text-align:center">
+  <div class="container">
+    <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:12px">Semak kelayakan anda <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--orange)">hari ini.</span></h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.55);max-width:460px;margin:0 auto 28px;line-height:1.7">Jangan biarkan kos menjadi penghalang. Hubungi kami dan kami akan bantu cari cara untuk anda belajar secara percuma atau bersubsidi.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#" class="btn btn-outline-white" aria-disabled="true" style="opacity:0.45;cursor:not-allowed;pointer-events:none;">Pendaftaran ditutup</a>
+    </div>
+  </div>
+</section>

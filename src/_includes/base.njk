@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | eDagang</title>
+  <meta name="description" content="{{ description }}">
+  {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+  <meta property="og:title" content="{{ ogTitle or title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ canonical or page.url }}">
+  <link rel="canonical" href="{{ site.url }}{{ canonical or page.url }}">
+  <link rel="stylesheet" href="/css/style.css">
+  {% if schemaJson %}
+  <script type="application/ld+json">{{ schemaJson | safe }}</script>
+  {% endif %}
+  {% if pageStyles %}
+  <style>{{ pageStyles | safe }}</style>
+  {% endif %}
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-brand" href="/">
+    <div class="nav-logo-text"><span>e</span>Dagang</div>
+    <div class="nav-powered">Powered by <img src="/img/borong-logo.png" alt="Borong" style="height:2em;width:auto;vertical-align:middle;"></div>
+  </a>
+  <div class="nav-links">
+    <a href="/programs" {% if page.url == '/programs/' %}class="active"{% endif %}>Program</a>
+    <a href="/accreditation" {% if page.url == '/accreditation/' %}class="active"{% endif %}>HRDC Claimable</a>
+    <a href="/about" {% if page.url == '/about/' %}class="active"{% endif %}>Tentang Kami</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE CONTENT -->
+{{ content | safe }}
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name"><span>e</span>Dagang</div>
+      <p class="footer-brand-desc">Platform latihan B2B dan eCommerce #1 Malaysia. Powered by Borong (formerly Dropee) — Y Combinator W20.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Program</div>
+      <a href="/programs#b2b">B2B Wholesale</a>
+      <a href="/programs#ecommerce">eCommerce</a>
+      <a href="/programs#digital">Digital Marketing</a>
+      <a href="/programs#procurement">eProcurement</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Syarikat</div>
+      <a href="/about">Tentang Kami</a>
+      <a href="/accreditation">Akreditasi HRDC</a>
+      <a href="{{ site.borongUrl }}" target="_blank">Borong.com ↗</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Hubungi</div>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="#">{{ site.address }}</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Borong (Macro Tech Ventures Sdn Bhd). All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Terma & Syarat</a>
+      <a href="#">Polisi Privasi</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

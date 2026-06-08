@@ -1,0 +1,10 @@
+# Clean URL redirects (no .html extension needed)
+/programs     /programs/     301
+/about        /about/        301
+/accreditation /accreditation/ 301
+/daftar       /daftar/       301
+
+# Old Squarespace URLs
+/info         /programs/     301
+/edagangbydropee /daftar/   301
+/about-1      /about/        301

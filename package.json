@@ -1,0 +1,12 @@
+{
+  "name": "edagang",
+  "version": "1.0.0",
+  "description": "eDagang — B2B & eCommerce Training Platform, powered by Borong",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
